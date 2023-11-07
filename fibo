@@ -1,0 +1,28 @@
+def recurr(n):
+    if n<=1:
+        return n 
+    else:
+        return(recurr(n-1)+recurr(n-2))
+    
+def iterative(n):
+    a=0
+    b=1
+    print(a,end='')
+    print(b,end='')
+    for i in range(2, n):
+        print(a+b,end='')
+        a,b=b, a+b
+        
+if __name__=="__main__":
+    num=int(input("Enter the number : "))
+    print()
+    if num<=0:
+        print("Please type a positive integer : ")
+    else:
+        print("With Recursion : ")
+        for i in range(num):
+            print(recurr(i), end='')
+        print()
+        print("With Iteratin : ")
+        iterative(num)
+ 
